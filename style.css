@@ -95,13 +95,19 @@ h6 {
   font-size: 2rem;
   color: white;
   margin-bottom: 20px;
+  margin-left: 25px;
 }
 
 .customer_box {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   gap: 20px;
   font-size: 1.5rem;
+  margin-left: 25px;
+  max-width: 300px;
+  min-width: 200px;
+  margin-bottom: 20px;
 }
 
 .customer_items {
@@ -109,10 +115,11 @@ h6 {
 }
 
 .lorry_map {
-  background-color: darkgreen;
+  background-color: #161617;
+  border: solid white 2px;
   width: 500px;
   height: 500px;
-  margin-bottom: 25px;
+  margin: 25px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -121,5 +128,22 @@ h6 {
 }
 
 .lorry_map div {
-  border: solid red 2px;
+  border: solid white 2px;
+}
+
+.map_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map_box:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.customer_name:hover {
+  cursor: pointer;
+  color: red;
 }
