@@ -7,13 +7,6 @@ const customer = document.querySelectorAll(".customer_name");
 const mapBtn = document.querySelectorAll(".map_btn");
 const customerInfo = document.querySelector(".customer_info");
 
-lorryMap.addEventListener("click", (event) => {
-  console.log(event);
-  if (event.target == div.map_box) {
-    console.log("box");
-  }
-});
-
 mapBtn.forEach((el) => {
   el.addEventListener("click", (event) => {
     clearMap();
@@ -84,6 +77,11 @@ function createCustomer(obj) {
   h4.addEventListener("click", (event) => {
     targetValue = event.target.textContent;
   });
+}
+
+function captureCustomer() {
+  let name = document.querySelector("#name");
+  console.log(name.value);
 }
 
 function customerInput(name, trollies) {
