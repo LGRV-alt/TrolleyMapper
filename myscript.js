@@ -6,6 +6,7 @@ const lorryMap = document.querySelector(".lorry_map");
 const customer = document.querySelectorAll(".customer_name");
 const mapBtn = document.querySelectorAll(".map_btn");
 const customerInfo = document.querySelector(".customer_info");
+const customerInputButton = document.querySelector("#customer_create_button");
 
 mapBtn.forEach((el) => {
   el.addEventListener("click", (event) => {
@@ -79,9 +80,15 @@ function createCustomer(obj) {
   });
 }
 
+customerInputButton.addEventListener("click", () => {
+  captureCustomer();
+});
+
 function captureCustomer() {
-  let name = document.querySelector("#name");
-  console.log(name.value);
+  let customer = document.querySelector("#customer_input");
+  let customerTrollies = document.querySelector("#customer_trollies");
+  let newCustomer = new customerInput(customer.value, customerTrollies.value);
+  createCustomer(newCustomer);
 }
 
 function customerInput(name, trollies) {
@@ -90,6 +97,3 @@ function customerInput(name, trollies) {
 }
 
 const mitchell = new customerInput("mitchell", "8T");
-
-createCustomer(cus);
-createCustomer(mitchell);

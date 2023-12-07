@@ -14,10 +14,13 @@
     </nav>
     <div class="inputField">
         <div class="inputMain">
-            <input type="text" name="name" id="uniqueID" value="value" />
-            <input type="text" name="name" id="uniqueID" value="value" />
-            <input type="text" name="name" id="uniqueID" value="value" />
-            <button></button>
+            <label for="customer_input">Customer Name</label>
+            <input type="text" onfocus="this.value =``" name="customer_input" id="customer_input" value="" />
+            <label for="customer_trollies">Customer Trollies</label>
+            <input type="text" onfocus="this.value =``" name="customer_trollies" id="customer_trollies" value="" />
+            <label for="customer_extras">Customer Extras</label>
+            <input type="text" name="customer_extras" id="customer_extras" value="" />
+            <button id="customer_create_button" class="customer_create_button">click to create new customer</button>
 
         </div>
         
