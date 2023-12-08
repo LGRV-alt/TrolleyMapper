@@ -7,6 +7,27 @@ const customer = document.querySelectorAll(".customer_name");
 const mapBtn = document.querySelectorAll(".map_btn");
 const customerInfo = document.querySelector(".customer_info");
 const customerInputButton = document.querySelector("#customer_create_button");
+const navBtn = document.querySelector(".nav_button");
+const inputModal = document.querySelector(".inputField");
+const modalScreen = document.querySelector(".modalScreen");
+
+navBtn.addEventListener("click", () => {
+  if (inputModal.classList.contains("showModal")) {
+    inputModal.classList.remove("showModal");
+    modalScreen.classList.remove("blockScreen");
+    navBtn.textContent = "+";
+  } else {
+    inputModal.classList.add("showModal");
+    modalScreen.classList.add("blockScreen");
+    navBtn.textContent = "x";
+  }
+});
+
+modalScreen.addEventListener("click", () => {
+  inputModal.classList.remove("showModal");
+  modalScreen.classList.remove("blockScreen");
+  navBtn.textContent = "+";
+});
 
 mapBtn.forEach((el) => {
   el.addEventListener("click", (event) => {
@@ -58,11 +79,6 @@ function createMap(num, element) {
     });
   }
 }
-
-let cus = {
-  name: "albar",
-  trollies: "6T",
-};
 
 function createCustomer(obj) {
   let div = document.createElement("div");
