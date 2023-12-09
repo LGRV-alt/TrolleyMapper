@@ -87,7 +87,8 @@ body {
 .inputField {
   display: none;
   position: absolute;
-  right: 100%;
+  left: 100%;
+  transition: left 1s;
   height: 100%;
   background-color: black;
   min-width: 400px;
@@ -110,7 +111,8 @@ body {
 }
 
 .showModal {
-  right: 0;
+  left: 75%;
+  transition: left 1s;
 }
 
 .inputMain {
