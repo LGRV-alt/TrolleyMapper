@@ -54,6 +54,11 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.hide_btn {
+  background: transparent;
+  border: none;
+}
+
 .nav_bar {
   width: 100vw;
   height: 100px;
@@ -87,8 +92,8 @@ body {
 .inputField {
   display: none;
   position: absolute;
-  left: 100%;
-  transition: left 1s;
+  right: -800px;
+  transition: right 1s;
   height: 100%;
   background-color: black;
   min-width: 400px;
@@ -97,7 +102,6 @@ body {
 }
 
 .modalScreen {
-  /* background-color: transparent; */
   opacity: 0.6;
   background-color: #161617;
   position: absolute;
@@ -111,8 +115,8 @@ body {
 }
 
 .showModal {
-  left: 75%;
-  transition: left 1s;
+  right: 0;
+  transition: right 1s;
 }
 
 .inputMain {
@@ -132,6 +136,14 @@ body {
 .inputMain input {
   width: 250px;
   margin-top: 5px;
+  display: flex;
+  background-color: transparent;
+  color: white;
+  border: solid white 1px;
+}
+
+.flash_red {
+  outline: solid red 4px;
 }
 
 .customer_create_button {
@@ -152,6 +164,25 @@ body {
   margin: 0 30px;
 }
 
+.del_customer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: red;
+  font-size: 2rem;
+  border-radius: 5px;
+  border: none;
+  width: 25px;
+  height: 25px;
+}
+
+.del_customer:hover {
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+}
+
 .customer_title {
   font-size: 2rem;
   color: white;
@@ -160,10 +191,15 @@ body {
 }
 
 .customer_box {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 20px;
+  flex-wrap: nowrap; */
+  display: grid;
+  grid-template-columns: 25px 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap: 10px;
   font-size: 1.5rem;
   margin-left: 25px;
   max-width: 300px;

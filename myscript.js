@@ -10,6 +10,18 @@ const customerInputButton = document.querySelector("#customer_create_button");
 const navBtn = document.querySelector(".nav_button");
 const inputModal = document.querySelector(".inputField");
 const modalScreen = document.querySelector(".modalScreen");
+const hiddenBtn = document.querySelector(".hide_btn");
+
+function removeCustomer() {
+  let els = document.querySelectorAll(".del_customer");
+  for (let i = 0; i < els.length; i++) {
+    els[i].addEventListener("click", (e) => {
+      e.preventDefault();
+      e.target.closest("div").remove();
+    });
+  }
+}
+removeCustomer();
 
 navBtn.addEventListener("click", () => {
   if (inputModal.classList.contains("showModal")) {
@@ -27,6 +39,7 @@ modalScreen.addEventListener("click", () => {
   inputModal.classList.remove("showModal");
   modalScreen.classList.remove("blockScreen");
   navBtn.textContent = "+";
+  removeCustomer();
 });
 
 mapBtn.forEach((el) => {
@@ -84,8 +97,11 @@ function createCustomer(obj) {
   let div = document.createElement("div");
   let h4 = document.createElement("h4");
   let p = document.createElement("p");
+  let btn = document.createElement("button");
 
   customerInfo.appendChild(div);
+  div.appendChild(btn).classList.add("del_customer");
+  btn.textContent = "x";
   div.classList.add("customer_box");
   div.appendChild(h4).classList.add("customer_name");
   div.appendChild(p).classList.add("customer_items");
@@ -94,7 +110,15 @@ function createCustomer(obj) {
   h4.addEventListener("click", (event) => {
     targetValue = event.target.textContent;
   });
+
+  removeCustomer();
 }
+
+inputModal.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    captureCustomer();
+  }
+});
 
 customerInputButton.addEventListener("click", () => {
   captureCustomer();
@@ -104,7 +128,22 @@ function captureCustomer() {
   let customer = document.querySelector("#customer_input");
   let customerTrollies = document.querySelector("#customer_trollies");
   let newCustomer = new customerInput(customer.value, customerTrollies.value);
-  createCustomer(newCustomer);
+
+  if (customer.value && customerTrollies.value != "") {
+    createCustomer(newCustomer);
+  } else if (customer.value == "") {
+    showError(customer);
+  } else if (customerTrollies.value == "") {
+    showError(customerTrollies);
+  }
+}
+
+function showError(element) {
+  element.classList.add("flash_red");
+
+  setTimeout(function () {
+    element.classList.remove("flash_red");
+  }, 300);
 }
 
 function customerInput(name, trollies) {
