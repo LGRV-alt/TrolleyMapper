@@ -147,6 +147,10 @@ body {
   outline: solid red 4px;
 }
 
+.flash_green {
+  outline: solid green 4px;
+}
+
 .customer_create_button {
   margin-top: 100px;
 }
@@ -310,7 +314,6 @@ body {
   }
 
   .customer_info {
-    outline: solid red 1px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -130,6 +130,9 @@ function captureCustomer() {
   let newCustomer = new customerInput(customer.value, customerTrollies.value);
 
   if (customer.value && customerTrollies.value != "") {
+    // Change this to a spread operator?
+    showCorrectInput(customer);
+    showCorrectInput(customerTrollies);
     createCustomer(newCustomer);
   } else if (customer.value == "") {
     showError(customer);
@@ -143,6 +146,14 @@ function showError(element) {
 
   setTimeout(function () {
     element.classList.remove("flash_red");
+  }, 300);
+}
+
+function showCorrectInput(elements) {
+  elements.classList.add("flash_green");
+
+  setTimeout(function () {
+    elements.classList.remove("flash_green");
   }, 300);
 }
 
