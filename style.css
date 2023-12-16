@@ -300,7 +300,7 @@ body {
 .map_btn {
   width: 50px;
   background-color: yellow;
-  color: black;
+  /* color: black; */
   border: none;
 }
 
