@@ -11,6 +11,8 @@ const navBtn = document.querySelector(".nav_button");
 const inputModal = document.querySelector(".inputField");
 const modalScreen = document.querySelector(".modalScreen");
 const hiddenBtn = document.querySelector(".hide_btn");
+const themeBtn = document.querySelector(".theme_btn");
+const toggleMode = document.querySelector(".toggle_mode");
 
 function removeCustomer() {
   let els = document.querySelectorAll(".del_customer");
@@ -163,3 +165,23 @@ function customerInput(name, trollies) {
 }
 
 const mitchell = new customerInput("mitchell", "8T");
+
+function handleTheme() {
+  let colorMode = "dark";
+  themeBtn.addEventListener("click", () => {
+    if (colorMode == "dark") {
+      document.body.classList.remove("dark_mode");
+      document.body.classList.add("light_mode");
+      toggleMode.classList.add("toggle_light_mode");
+
+      colorMode = "light";
+    } else {
+      document.body.classList.remove("light_mode");
+      document.body.classList.add("dark_mode");
+      toggleMode.classList.remove("toggle_light_mode");
+      colorMode = "dark";
+    }
+  });
+}
+
+handleTheme();
