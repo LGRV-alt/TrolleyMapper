@@ -169,7 +169,12 @@ body {
 }
 
 .customer_info {
-  margin: 0 30px;
+  margin: 0 20px;
+}
+
+.customer_name {
+  align-items: center;
+  margin-left: 5px;
 }
 
 .del_customer {
@@ -191,28 +196,18 @@ body {
   cursor: pointer;
 }
 
-.customer_title {
-  font-size: 2rem;
-  color: white;
-  margin-bottom: 20px;
-  margin-left: 25px;
-}
-
 .customer_box {
-  /* display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap; */
   display: grid;
   grid-template-columns: 25px 1fr 0.5fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  gap: 10px;
-  font-size: 1.5rem;
+  gap: 1px;
+  font-size: 1.2rem;
   margin-left: 25px;
-  max-width: 300px;
+  /* max-width: 300px; */
   min-width: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem;
 }
 
 .customer_items {
@@ -240,6 +235,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 }
 
 .map_box:hover {
@@ -315,15 +311,15 @@ body {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     margin-left: 15%;
-    max-width: 100%;
-    min-width: 100%;
-    margin-bottom: 0px;
+    width: 100%;
+    margin-bottom: 5px;
   }
 
   .customer_info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     margin: 0px;
   }
@@ -331,8 +327,8 @@ body {
   .lorry_map {
     background-color: #161617;
     border: solid white 2px;
-    width: 300px;
-    height: 300px;
+    width: 360px;
+    height: 360px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -378,10 +374,16 @@ body {
   }
 
   .map_buttons {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+
+  .map_box {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    padding: 5px;
   }
 }
