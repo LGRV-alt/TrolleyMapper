@@ -99,27 +99,22 @@ body {
   gap: 20px;
 }
 .theme_btn {
-  background-color: white;
   cursor: pointer;
-  color: black;
   width: 100px;
   border: solid;
 }
 
 .toggle_mode {
-  color: black;
-
-  font-size: 1rem;
+  font-size: 0.8rem;
+  padding: 5px;
   position: relative;
   height: 100%;
   width: 50%;
-  background-color: red;
   outline: solid;
 }
 
 .toggle_light_mode {
   float: right;
-  transition: float 2s;
 }
 
 .nav_button {
@@ -136,6 +131,10 @@ body {
   background-color: black;
   color: yellow;
   cursor: pointer;
+}
+
+.input_light {
+  background-color: white;
 }
 
 .inputField {
@@ -187,9 +186,7 @@ body {
   width: 250px;
   margin-top: 5px;
   display: flex;
-  background-color: transparent;
-  color: white;
-  border: solid white 1px;
+  border: solid 1px;
 }
 
 .flash_red {

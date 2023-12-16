@@ -167,19 +167,28 @@ function customerInput(name, trollies) {
 const mitchell = new customerInput("mitchell", "8T");
 
 function handleTheme() {
-  let colorMode = "dark";
+  let colorMode = "Dark";
+  toggleMode.textContent = "Dark";
   themeBtn.addEventListener("click", () => {
-    if (colorMode == "dark") {
+    if (colorMode == "Dark") {
       document.body.classList.remove("dark_mode");
       document.body.classList.add("light_mode");
       toggleMode.classList.add("toggle_light_mode");
-
-      colorMode = "light";
+      inputModal.style.backgroundColor = "gray";
+      document.querySelector(".inputMain").style.backgroundColor =
+        "var(--light_main_color)";
+      colorMode = "Light";
+      toggleMode.textContent = colorMode;
     } else {
       document.body.classList.remove("light_mode");
       document.body.classList.add("dark_mode");
       toggleMode.classList.remove("toggle_light_mode");
-      colorMode = "dark";
+      inputModal.style.backgroundColor = "black";
+      document.querySelector(".inputMain").style.backgroundColor =
+        "var(--dark_main_color)";
+
+      colorMode = "Dark";
+      toggleMode.textContent = colorMode;
     }
   });
 }
