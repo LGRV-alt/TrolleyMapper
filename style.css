@@ -13,7 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: #161617;
   color: white;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 img,
@@ -53,7 +53,6 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  overflow-x: hidden;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -273,7 +272,7 @@ body {
 @media (max-width: 480px) {
   html,
   body {
-    overflow: hidden;
+    overflow: visible;
   }
   .del_customer {
     height: 20px;
