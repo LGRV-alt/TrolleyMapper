@@ -104,6 +104,10 @@ body {
   border: solid;
 }
 
+.theme_btn div:hover {
+  background-color: gray;
+}
+
 .toggle_mode {
   font-size: 0.8rem;
   padding: 5px;
