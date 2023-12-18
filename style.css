@@ -221,7 +221,7 @@ body {
 
 .customer_name {
   align-self: center;
-  margin-left: 0px;
+  margin-left: 5px;
   margin-right: 10px;
 }
 
@@ -260,7 +260,7 @@ body {
 
 .customer_items {
   color: red;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   align-self: center;
 }
 
@@ -355,6 +355,14 @@ body {
 
   .customer_info {
     font-size: 0.5rem;
+  }
+
+  .customer_items {
+    font-size: 0.8rem;
+  }
+
+  .customer_name {
+    margin-left: 0px;
   }
 
   .customer_box {
