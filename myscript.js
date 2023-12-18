@@ -108,7 +108,11 @@ function createCustomer(obj) {
   div.appendChild(h4).classList.add("customer_name");
   div.appendChild(p).classList.add("customer_items");
   h4.textContent = obj.name;
-  p.textContent = obj.trollies;
+  if (obj.trollies != "") {
+    p.textContent = `${obj.trollies}T ${obj.extras}`;
+  } else {
+    p.textContent = `${obj.extras}`;
+  }
   h4.addEventListener("click", (event) => {
     targetValue = event.target.textContent;
   });
@@ -129,12 +133,21 @@ customerInputButton.addEventListener("click", () => {
 function captureCustomer() {
   let customer = document.querySelector("#customer_input");
   let customerTrollies = document.querySelector("#customer_trollies");
-  let newCustomer = new customerInput(customer.value, customerTrollies.value);
+  let customerExtras = document.querySelector("#customer_extras");
+  let newCustomer = new customerInput(
+    customer.value,
+    customerTrollies.value,
+    customerExtras.value
+  );
 
-  if (customer.value && customerTrollies.value != "") {
+  if (
+    (customer.value && customerTrollies.value != "") ||
+    (customer.value && customerExtras.value != "")
+  ) {
     // Change this to a spread operator?
     showCorrectInput(customer);
     showCorrectInput(customerTrollies);
+    showCorrectInput(customerExtras);
     createCustomer(newCustomer);
   } else if (customer.value == "") {
     showError(customer);
@@ -159,9 +172,10 @@ function showCorrectInput(elements) {
   }, 300);
 }
 
-function customerInput(name, trollies) {
+function customerInput(name, trollies, extras) {
   this.name = name;
   this.trollies = trollies;
+  this.extras = extras;
 }
 
 const mitchell = new customerInput("mitchell", "8T");
