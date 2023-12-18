@@ -217,7 +217,8 @@ body {
 
 .customer_name {
   align-self: center;
-  margin-left: 5px;
+  margin-left: 0px;
+  margin-right: 10px;
 }
 
 .del_customer {
@@ -317,7 +318,9 @@ body {
   color: red;
 }
 
-@media (max-width: 480px) {
+/* media 480px - before changes */
+
+@media (max-width: 1000px) {
   html,
   body {
     overflow: visible;
