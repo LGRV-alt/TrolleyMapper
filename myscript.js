@@ -178,8 +178,6 @@ function customerInput(name, trollies, extras) {
   this.extras = extras;
 }
 
-const mitchell = new customerInput("mitchell", "8T");
-
 function handleTheme() {
   let colorMode = "Dark";
   toggleMode.textContent = "Dark";

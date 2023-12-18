@@ -368,14 +368,16 @@ body {
   .customer_info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: left;
+    /* justify-content: space-between; */
+    /* align-items: center; */
     flex-wrap: wrap;
     margin: 0px;
   }
 
   .lorry_map {
     border: solid white 2px;
+    margin-top: 5px;
     width: 360px;
     height: 360px;
     display: grid;
@@ -399,7 +401,7 @@ body {
     opacity: 0;
     transition: right 0s;
     height: 100%;
-    width: 100%;
+
     background-color: black;
     min-width: 400px;
     display: flex;
@@ -428,6 +430,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
   }
 
   .map_box {
