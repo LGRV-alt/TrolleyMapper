@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,37 +7,71 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="dark_mode">
-   
     <nav class="nav_bar">
-      <h1 class="nav_title">Trolley Mapper</h1>
+      <a href="https://lgrv-alt.github.io/TrolleyMapper/"
+        ><h1 class="nav_title">Trolley Mapper</h1></a
+      >
       <div class="nav_buttons">
         <div class="theme_btn"><div class="toggle_mode"></div></div>
         <button class="nav_button">+</button>
-       
       </div>
-      
     </nav>
+
+    <!-- Screen that shows the choice for vehicle -->
+    <div class="add_vis vehicle_choice_screen">
+      <h2>Pick the vehicle</h2>
+      <div class="vehicle_container">
+        <div class="vehicle_choice">
+          <div class="choice_btn">Lorry</div>
+        </div>
+        <div class="vehicle_choice">
+          <div class="choice_btn">Trailer</div>
+        </div>
+      </div>
+    </div>
 
     <div class="modalScreen"></div>
 
-    
     <div class="inputField">
-        <div class="inputMain">
-            <label for="customer_input">Customer Name</label>
-            <input tabindex="1" type="text" onfocus="this.value =``" name="customer_input" id="customer_input" value="" />
-            <label for="customer_trollies">Customer Trollies</label>
-            <input tabindex="2" type="number" onfocus="this.value =``" name="customer_trollies" id="customer_trollies" value="" />
-            <label for="customer_extras">Customer Extras</label>
-            <input tabindex="3"type="text" onfocus="this.value =``" name="customer_extras" id="customer_extras" value="" />
-            <button tabindex="4" id="customer_create_button" class="customer_create_button">create new customer</button>
-
-        </div>
-        
+      <div class="inputMain">
+        <label for="customer_input">Customer Name</label>
+        <input
+          tabindex="1"
+          type="text"
+          onfocus="this.value =``"
+          name="customer_input"
+          id="customer_input"
+          value=""
+        />
+        <label for="customer_trollies">Customer Trollies</label>
+        <input
+          tabindex="2"
+          type="number"
+          onfocus="this.value =``"
+          name="customer_trollies"
+          id="customer_trollies"
+          value=""
+        />
+        <label for="customer_extras">Customer Extras</label>
+        <input
+          tabindex="3"
+          type="text"
+          onfocus="this.value =``"
+          name="customer_extras"
+          id="customer_extras"
+          value=""
+        />
+        <button
+          tabindex="4"
+          id="customer_create_button"
+          class="customer_create_button"
+        >
+          create new customer
+        </button>
+      </div>
     </div>
-    
 
     <div class="main_section">
-     
       <div class="customer_info">
         <!-- <h3 class="customer_title">Customers</h3> -->
         <div class="customer_box">
@@ -45,9 +79,8 @@
           <h4 class="customer_name">Blank</h4>
           <p class="customer_items"></p>
         </div>
-      
-        
       </div>
+      <!-- Lorry Screen -->
       <div class="lorry_info">
         <div class="map_buttons">
           <button class="map_btn">4T</button>
@@ -57,13 +90,24 @@
           <button class="map_btn">20T</button>
           <button class="map_btn">24T</button>
         </div>
-        <div class="lorry_map">
+        <div class="lorry_map"></div>
       </div>
-    
-      
+
+      <!-- Box Trailer Screen -->
+      <div class="box_trailer">
+        <div class="map_buttons">
+          <button class="map_btn">3T</button>
+          <button class="map_btn">6T</button>
+          <button class="map_btn">7T</button>
+        </div>
+        <div class="box_map">
+          <div class="box_trailer_boot"></div>
+          <div class="box_trailer_triangle"></div>
+          <div class="box_trailer_main"></div>
+        </div>
+      </div>
     </div>
-    
-    
+
     <script src="myscript.js"></script>
   </body>
 </html>

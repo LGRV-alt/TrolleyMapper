@@ -1,8 +1,10 @@
 console.log("hello there");
 
 let targetValue = "";
+let vehicleChoice = "";
 
 const lorryMap = document.querySelector(".lorry_map");
+const trailerMap = document.querySelector(".box_trailer_main");
 const customer = document.querySelectorAll(".customer_name");
 const mapBtn = document.querySelectorAll(".map_btn");
 const customerInfo = document.querySelector(".customer_info");
@@ -13,6 +15,31 @@ const modalScreen = document.querySelector(".modalScreen");
 const hiddenBtn = document.querySelector(".hide_btn");
 const themeBtn = document.querySelector(".theme_btn");
 const toggleMode = document.querySelector(".toggle_mode");
+const vehicleContainer = document.querySelector(".vehicle_container");
+const lorryScreen = document.querySelector(".lorry_info");
+const trailerScreen = document.querySelector(".box_trailer");
+const choiceScreen = document.querySelector(".vehicle_choice_screen");
+
+function handleVehicleChoice() {
+  vehicleContainer.addEventListener("click", (e) => {
+    choice = e.target.textContent;
+    if (choice == "Trailer") {
+      vehicleChoice = "trailer";
+      choiceScreen.style.display = "none";
+      trailerScreen.style.display = "flex";
+
+      console.log(choice);
+    } else if (choice == "Lorry") {
+      vehicleChoice = "lorry";
+      choiceScreen.style.display = "none";
+      lorryScreen.style.display = "flex";
+
+      // lorryScreen.classList.remove("add_vis");
+    }
+  });
+}
+
+handleVehicleChoice();
 
 function removeCustomer() {
   let els = document.querySelectorAll(".del_customer");
@@ -47,7 +74,11 @@ modalScreen.addEventListener("click", () => {
 mapBtn.forEach((el) => {
   el.addEventListener("click", (event) => {
     clearMap();
-    createMap(getNum(el.textContent), lorryMap);
+    if (vehicleChoice == "trailer") {
+      createMap(getNum(el.textContent), trailerMap);
+    } else {
+      createMap(getNum(el.textContent), lorryMap);
+    }
   });
 });
 
