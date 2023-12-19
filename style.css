@@ -135,8 +135,21 @@ a {
   border-bottom: solid 5px;
 }
 
+.nav_bar img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  align-self: center;
+
+  filter: invert(29%) sepia(64%) saturate(3742%) hue-rotate(129deg)
+    brightness(96%) contrast(98%);
+}
+
 .nav_title {
   font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav_buttons {
@@ -437,6 +450,12 @@ a {
 
   .nav_title {
     font-size: 1.5rem;
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  .nav_title img {
+    /* margin: 0px; */
   }
 
   .nav_button {
