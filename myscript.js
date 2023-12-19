@@ -20,6 +20,10 @@ const lorryScreen = document.querySelector(".lorry_info");
 const trailerScreen = document.querySelector(".box_trailer");
 const choiceScreen = document.querySelector(".vehicle_choice_screen");
 
+window.addEventListener("load", () => {
+  handleVehicleChoice();
+});
+
 function handleVehicleChoice() {
   vehicleContainer.addEventListener("click", (e) => {
     choice = e.target.textContent;
