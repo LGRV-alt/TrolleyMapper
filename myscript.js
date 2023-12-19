@@ -43,8 +43,6 @@ function handleVehicleChoice() {
   });
 }
 
-handleVehicleChoice();
-
 function removeCustomer() {
   let els = document.querySelectorAll(".del_customer");
   for (let i = 0; i < els.length; i++) {
