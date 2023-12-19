@@ -1,5 +1,3 @@
-console.log("hello there");
-
 let targetValue = "";
 let vehicleChoice = "";
 
@@ -21,8 +19,16 @@ const trailerScreen = document.querySelector(".box_trailer");
 const choiceScreen = document.querySelector(".vehicle_choice_screen");
 
 window.addEventListener("load", () => {
-  handleVehicleChoice();
+  init();
 });
+
+// -------------------Functions--------------------------------
+
+function init() {
+  handleVehicleChoice();
+  removeCustomer();
+  handleTheme();
+}
 
 function handleVehicleChoice() {
   vehicleContainer.addEventListener("click", (e) => {
@@ -31,14 +37,10 @@ function handleVehicleChoice() {
       vehicleChoice = "trailer";
       choiceScreen.style.display = "none";
       trailerScreen.style.display = "flex";
-
-      console.log(choice);
     } else if (choice == "Lorry") {
       vehicleChoice = "lorry";
       choiceScreen.style.display = "none";
       lorryScreen.style.display = "flex";
-
-      // lorryScreen.classList.remove("add_vis");
     }
   });
 }
@@ -52,37 +54,6 @@ function removeCustomer() {
     });
   }
 }
-removeCustomer();
-
-navBtn.addEventListener("click", () => {
-  if (inputModal.classList.contains("showModal")) {
-    inputModal.classList.remove("showModal");
-    modalScreen.classList.remove("blockScreen");
-    navBtn.textContent = "+";
-  } else {
-    inputModal.classList.add("showModal");
-    modalScreen.classList.add("blockScreen");
-    navBtn.textContent = "x";
-  }
-});
-
-modalScreen.addEventListener("click", () => {
-  inputModal.classList.remove("showModal");
-  modalScreen.classList.remove("blockScreen");
-  navBtn.textContent = "+";
-  removeCustomer();
-});
-
-mapBtn.forEach((el) => {
-  el.addEventListener("click", (event) => {
-    clearMap();
-    if (vehicleChoice == "trailer") {
-      createMap(getNum(el.textContent), trailerMap);
-    } else {
-      createMap(getNum(el.textContent), lorryMap);
-    }
-  });
-});
 
 function getNum(string) {
   if (string.length > 2) {
@@ -95,12 +66,6 @@ function getNum(string) {
     return number;
   }
 }
-
-customer.forEach((el) => {
-  el.addEventListener("click", (event) => {
-    targetValue = el.textContent;
-  });
-});
 
 function handleInput(element) {
   if (element.textContent == "" && targetValue == "") {
@@ -149,19 +114,8 @@ function createCustomer(obj) {
   h4.addEventListener("click", (event) => {
     targetValue = event.target.textContent;
   });
-
   removeCustomer();
 }
-
-inputModal.addEventListener("keypress", (e) => {
-  if (e.key == "Enter") {
-    captureCustomer();
-  }
-});
-
-customerInputButton.addEventListener("click", () => {
-  captureCustomer();
-});
 
 function captureCustomer() {
   let customer = document.querySelector("#customer_input");
@@ -238,4 +192,50 @@ function handleTheme() {
   });
 }
 
-handleTheme();
+// ---------event listeners-------------------------------
+
+navBtn.addEventListener("click", () => {
+  if (inputModal.classList.contains("showModal")) {
+    inputModal.classList.remove("showModal");
+    modalScreen.classList.remove("blockScreen");
+    navBtn.textContent = "+";
+  } else {
+    inputModal.classList.add("showModal");
+    modalScreen.classList.add("blockScreen");
+    navBtn.textContent = "x";
+  }
+});
+
+modalScreen.addEventListener("click", () => {
+  inputModal.classList.remove("showModal");
+  modalScreen.classList.remove("blockScreen");
+  navBtn.textContent = "+";
+  removeCustomer();
+});
+
+mapBtn.forEach((el) => {
+  el.addEventListener("click", (event) => {
+    clearMap();
+    if (vehicleChoice == "trailer") {
+      createMap(getNum(el.textContent), trailerMap);
+    } else {
+      createMap(getNum(el.textContent), lorryMap);
+    }
+  });
+});
+
+customer.forEach((el) => {
+  el.addEventListener("click", () => {
+    targetValue = el.textContent;
+  });
+});
+
+inputModal.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    captureCustomer();
+  }
+});
+
+customerInputButton.addEventListener("click", () => {
+  captureCustomer();
+});

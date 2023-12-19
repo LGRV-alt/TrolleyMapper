@@ -474,8 +474,6 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    /* justify-content: space-between; */
-    /* align-items: center; */
     flex-wrap: wrap;
     margin: 0px;
   }
